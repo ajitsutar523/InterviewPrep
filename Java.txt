@@ -1,0 +1,426 @@
+why java is not 100% object Oriented?
+-> because of primitive data types namely : boolean, byte, char, int, float, double, long, short
+-> to make object oriented we have wrapper classes and converts primitive datatypes into object oriented.
+
+why pointers not used?
+-> they are unsafe
+-> increase the complexity of the program since java known for simplicity
+-> JVM is responsible for implicit memmory allocation
+-> avoid direct access to memmory by user
+
+JIT compiler?
+-> JDK:Java source code to java.exe / bytes code
+-> JRE: converts bytes codes to machine code at the runtime 
+-> which is faster
+
+Why string is immutable?
+-> String pool requres string to be immutable otherwise shared reference can be changed from anywhere
+-> security because string is shared on different area like file system, networking connection, database connection, having immutable string allows you to be secure and safe because no one can change reference of string once its created
+
+What is Marker Interface?
+-> A Marker interface can defined as interface having no data members and member function
+-> Marker interface is an empty interface
+-> Eg: Serializable , cloneable 
+-> these interface tells compiler that it has something 
+to do with cloneable and serializable
+
+can you override a private or static method in java?
+->No
+->cannot override private method because its not accessible in subclass
+-> if we create static mathod with same signature in subclass then it will just hide the superclass method also known as METHOD HIDING.
+
+Finally always execute?
+-> Yes
+-> Except System.exit() and sytstem crash
+
+Method of object class?
+-> Object class is parent of all objects in java
+-> Clone(), equals(Object o), finalize(), getClass(), hashCode(), toString(), notify(), notifyAll(), wait()
+
+How to make class Immutable?
+-> declare class as final so it can't be extended
+-> make all fields private so no direct access
+-> make all mutable fields final so value can't be assigned again
+-> don't provide setter methods
+-> initilize fields using constructor
+-> return copy obejct so it will not have direct access to actual object reference
+
+What is Singleton class?
+-> singleton class is class whos only one instance can be created any time in one JVM.
+-> make constructor private
+-> write method to get single instace
+
+Garbage Collection
+-> JVM controles the GC
+-> Is an automatic process looking at heap memmory , identifying which objects are in use and which are not and deleting unused objects.
+-> It removes the burden of allocation and deallocation of memmory
+-> System.gc() method to call GC
+-> garbage collector call finalize to determine there are no more reference to object
+
+Collection Hierarchy:
+
+Collection?
+-> Collection is the root of the java collection Framework java.util.collection
+-> Most of the collection are inherited from this interface except Map interface
+-> collection - List, Queue, Set and Map
+
+List
+-> java.util.List
+-> contains ordered elements
+-> may include duplicates
+-> supports the index based search ,random access
+-> elements can be easily inserted irrespective of the position
+
+ArrayList
+-> Dynamic resizing 50% of its original size
+-> non synchhronized
+
+LinkedList
+-> implements List and Deque interface
+-> Maintain insertion order
+-> Non Synchronized
+-> does not support accessing elements randomly
+-> we can use ListInterator to interate Linked List
+
+Vector
+-> Synchronized
+-> Maintain insertion order
+-> thread safe
+-> vecotr increses size by doubling its size
+-> its a legacy class
+
+Stack
+-> extends vector
+-> last in first out
+-> elements are added as well as removed from rear end 
+
+
+Set
+-> Doesn't define an order for the elements 
+-> index based search not supported
+-> no duplicates
+
+HashSet
+-> implements set
+-> implments Hashtable
+-> contain only unique elemets
+-> only one null elements can be added 
+-> its unordered as set
+
+
+Linked HashSet
+-> implements HashSet
+-> ordered version of hashset
+-> which maintains doubly linked list across all elements
+-> it preserves the insertion order
+
+Sorted Set
+-> Extends Set
+-> All Elements of sorted set must implements comparable interface
+-> its sort in ascending order
+
+Tree Set
+-> Implements Sorted Set
+-> uses tree storage (self balancing binary search tree like red black tree)
+-> objects in a treeset are stored in a asorted and ascending order
+-> faster
+
+Queue
+-> java.util.Queue
+-> follows FIFO approach
+-> elements adds at rear end and removes from front end
+
+Priority Queue
+-> implements queue
+-> priority is associated with each element
+-> high priority elements is served before low priority element irrespective of their insertion order
+
+Deque
+-> Extends Queue
+-> referes double ended queue
+-> elements can be added and removed from either end
+
+ArrayDeQue
+-> implements Deque
+-> way to applu resizable array in addition to the implemention of deque interface
+-> no capasity restriction
+
+Map
+-> java.util.Map
+-> represents a key value pair
+-> map interface does not implements the collection
+-> it can only contain a unique key but can have duplicate values
+
+HashMap
+-> implemnts Map
+-> Non Syanchronized
+-> Allows Only one null key but multiple null values
+
+HashTable
+-> implements Map
+-> Sunchronized
+-> dosen't allows any null key or values
+
+SortedMap
+-> Extends Map
+-> entries are maintained in an aascending key order
+
+TreeMap
+-> implicitly implements the Red-Black tree implementation
+-> cannot store any null key
+
+Why Map Doesn't extend the collection interface?
+-> Map follows key value pair structure
+-> collection interface is a collection of objects which stored in structure manner with specific access mechanism
+-> collection uses add(E) and Map uses put(K,V)
+
+Fail-Fast Iterators
+-> throws concurrentModificationnException
+-> when 2 thread modifies at same time
+-> works on original collection
+
+Fail-Safe Interators
+-> doesn't throw concurrentModificationnException
+-> works on Clone of collection
+
+HashMap 
+-> link key and value
+-> store using put(K,V) 
+-> retrive using get(K)
+-> when we call put(K,V) , hashcode() method of the key object is called which calculates an indec of the bucket location where we can store the value object
+-> when we call get(V) method and again pass the key obejct , which lands on the same index or bucket to retive the object
+
+Exception Handling
+-> Exception is an abnormal condition which occurs during the execution of a program and disrupts the normal flow of the program
+-> If not handled correctly it can cause the program to terminate
+-> Have 3 blocks try catch finally
+
+Hiearachy of exception
+-> Throwable is parent class
+-> throwable has 2 subclass Exception and error
+-> Exception has checked exception and unchecked exception
+-> Checked exception are compile time exception eg: Io Exception, SQL exception, classNotFound Exception
+-> unChecked Exception are runtime exception eg: NullPointer Exception, IndexOutOfBound Exception
+-> ERROR eg: StackOverflow Error, OutOfMemory Error , Virtual Machine error
+
+throw
+-> used to explicitly throw exception
+-> used within method
+-> cannot throw multiple exception
+
+throws
+-> used to declare an exception
+-> throws used with the method signature
+-> can declare multiple exception
+
+
+JAVA 8 
+-> to introduce conciseness in the code
+-> java brings functional programming which is enable by lambda expression
+-> compact code, more readable and resuable code, more testable code , parallel operations
+-> Lambda Expression, Stream API, Default method in the interface
+	Static methods, Functional Interface, Optional
+
+Lambda Expression
+-> lambda expression is an anonymous function without name return type and access modifier and having one lambda (->) symbol
+-> which take some parameters and return a value
+-> (a,b)->System.out.println(a+b);
+
+Functional Interface
+-> Only one Abstract method
+-> can gave any number of static, default method
+-> uses @FunctionInterface annotationn
+-> eg: Comparable->comapareTO(), Runnable->run()
+
+Lambda and functional interface related?
+-> functional interface is used to provide reference to lambda expression
+-> Comparator<String> c=(s1,s2)-> s1.compareTo(s2);
+-> (s1,s2)-> s1.compareTo(s2) is lamda expression
+-> Comparator<String> c is a functional interface
+
+Predicate
+-> is pre defined functional interface
+-> only abstract methos in predicate is test()
+-> whenever we want o check some boolean condition we use predicates
+-> it takes only one input of any type and return only true or false
+-> Predicate<String> checkLength= s -> s.length()>=5;
+	checkLength.test("hello there"); return true
+-> predicate joining using And Or Negate
+-> checkLength.and(CheckEvenLength).test("hello there");
+
+Function
+-> is pre defined functional interface
+-> only abstract methos in Function is R apply(T t)
+-> give some input perform operation and return result
+-> it takes only one argument and return one output
+-> we declare both return type and input type
+-> Fuction<Integer,Integer> squareMe = i-> i*i; squareMe.apply(5);
+-> Function chaining : andThen , compose
+-> f1.andThen(f2).apply(input) - first f1 and then f2
+-> f1.compose(f2).apply(input) - first f3 and then f1
+
+Consumer
+-> is pre defined functional interface
+-> only abstract method in Consumer is accept(T t)
+-> it takes one input and no return type
+-> Consumer<Integer> print= i -> syso("Number"+i); print.accept(5);
+-> f1.andThen(f2).accept(input)
+ 
+Supplier
+-> is pre defined functional interface
+-> only abstract method in Supplier is R get()
+-> it takes one input and no return type
+-> Supplier<Date> date= () -> new Date(); date.get();
+
+BiConsumer , BiFunction, BiPredicate All takes 2 input
+
+Method referencing
+-> :: used for referencing
+-> demo d = Test :: TestImplemention ;
+
+default Methods in interface
+-> for adding new method to the interface without affecting implementing classes
+-> with this featture we can avoid many compile time errors
+-> default void demoMethod(){ syso("hey");}
+-> this method don't need implementation in subclass
+-> but we can add our own implementation 
+-> default is not an access modifier like private and protected
+
+Static methods in interface
+-> we can call these methos with just interface name
+-> we don't need to create objects 
+
+Streams
+-> Stream is used when we want to process bulk object of collection
+-> it is a way to operate on collection in java8 is stream
+-> is is a special iteratot class that allows processing collection of objects in a functional manner
+-> it allows developer to perform operation such as filtering , mapping and reducing on collection data
+-> filter sort the data on given condition
+-> Map create new object against each existing stream object based on some function
+
+Eg: 
+List<Integer> arrList=Arrays.asList(12,23,2,5,65,6757,76);
+List<Integer> newList=arrList.stream.filter(n-> n>10).collect(Collectors.toList());
+newList.stream.forEach(n->syso(n));
+
+Stream - configuration of stream - filter and map
+       - processing that configuration - collect, Count, Sorted, Min Max, forEach, toArray
+
+What is OOPS
+-> OOPS is a programming technique that employs objects rather than just functions and procudures
+-> All objects are grouped together into classes in object oriented programming
+-> OOP's integrates real-world concepts into programming such as inheritance , polymorphism , and abstraction
+
+-> Allows more clarity
+-> reduces redundancy
+-> ability to bind both data and code together
+-> improves code readibility
+-> polymorphism gives flexibility to ther programs by allowing the enitites to have multiple forms
+
+class
+-> A class is an object's blueprint or template.
+-> it is a data type that the user specifies
+-> we can define variables, constants, member, functions etc
+-> A class does not consume any memmory at the run time
+
+objects
+-> Objects are basically instances of a class
+-> they can access variables or methods declared inside the class
+
+
+Inheritance
+-> It is the mechanism in Java by which one class is allowed to inherit the features(fields and methods) of another class.
+-> In Java, Inheritance means creating new classes based on existing ones. A class that inherits from another class can reuse the methods and fields of that class. In addition, you can add new fields and methods to your current class as well. 
+-> Advantage : Code Resuability, method overriding, abstraction
+-> Types : Single Inheritance, Multilevel Inheritance, Hierarchical Inheritance, Multiple Inheritance, Hybrid Inheritance
+
+PolyMorphism
+-> Polymorphism allows us to perform a single action in different ways
+-> In other words, polymorphism allows you to define one interface and have multiple implementations.
+-> Types Compile-Time and Runtime
+
+Compile-Time Polymorphism
+-> It is also known as static polymorphism. This type of polymorphism is achieved by method overloading 
+-> Method OverLoading : When there are multiple functions with the same name but different parameters then these functions are said to be overloaded. Functions can be overloaded by changes in the number of arguments or/and a change in the type of arguments.
+
+Runtime Polymorphism in Java
+-> It is also known as Dynamic Method Dispatch. It is a process in which a function call to the overridden method is resolved at Runtime.
+-> This type of polymorphism is achieved by Method Overriding. Method overriding
+-> the other hand, occurs when a derived class has a definition for one of the member functions of the base class. That base function is said to be overridden.
+
+Abstraction
+-> Abstraction in Java is the process in which we only show essential details/functionality to the user.
+-> The non-essential implementation details are not displayed to the user. 
+-> abstraction is achieved by interfaces and abstract classes. We can achieve 100% abstraction using interfaces.
+-> Implementation: To implement an interface we use the keyword “extends” with class.
+
+Java Abstract classes and Java Abstract methods
+-> An abstract class is a class that is declared with an abstract keyword.
+-> An abstract method is a method that is declared without implementation.
+-> An abstract class may or may not have all abstract methods. Some of them can be concrete methods
+-> A method-defined abstract must always be redefined in the subclass, thus making overriding compulsory or making the subclass itself abstract.
+-> Any class that contains one or more abstract methods must also be declared with an abstract keyword.
+-> There can be no object of an abstract class. That is, an abstract class can not be directly instantiated with the new operator.
+-> An abstract class can have parameterized constructors and the default constructor is always present in an abstract class.
+
+Interface
+-> The interface in Java is a mechanism to achieve abstraction.
+-> There can be only abstract methods in the Java interface, not the method body.
+-> using interface we can achieve 100% abstraction and multiple inheritance.
+-> In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body. Java Interface also represents the IS-A relationship.
+-> Implementation: To implement an interface we use the keyword “implements” with class.
+
+Encapsulation
+-> Encapsulation is a way of hiding the implementation details of a class from outside access and only exposing a public interface that can be used to interact with the class.
+-> encapsulation is achieved by declaring the instance variables of a class as private
+-> To allow outside access to the instance variables, public methods called getters and setters are defined
+-> Advantage: Data hiding, increases flexibility, resuability, testing code is easy
+
+
+Access Modifiers
+-> Default : are accessible only within the same package.
+-> Private : are accessible only within the class in which they are declared.
+-> Protected : are accessible within the same package or subclasses in different packages.
+-> Public : are accessible from everywhere in the program.
+
+Comparable Interface
+-> The Comparable interface is used to compare an object of the same class with an instance of that class it provides ordering of data for objects of the user-defined class. 
+-> The class has to implement the java.lang.Comparable interface to compare its instance
+-> CompareTo
+-> Implements comparable to the entity eg :class Pair implements Comparable<Pair> 
+-> Override comapareTo(Pair a) Mathod write your own logic
+-> use Arrays.sort(arr) to sort 
+
+Comparator Interface 
+-> A comparator interface is used to order the objects of user-defined classes.
+-> A comparator object is capable of comparing two objects of the same class. Following function compare obj1 with obj2.
+-> public int compare(Object obj1, Object obj2):
+-> create a class sortByName which implements Comparator<Student>
+-> write compare method (Student a, Student b) and write logic
+-> Collection.sort(arryaname, new SortbyName());
+
+Constructors
+-> A constructor in Java is a special method that is used to initialize objects.
+-> The constructor is called when an object of a class is created. It can be used to set initial values for object attributes.
+-> a Constructor is a block of codes similar to the method.
+-> It is called when an instance of the class is created. At the time of calling the constructor, memory for the object is allocated in the memory. 
+-> It is a special type of method that is used to initialize the object. 
+-> Every time an object is created using the new() keyword, at least one constructor is called.
+
+Instance Methods
+-> Instance methods can access instance variables and instance methods directly and undeviatingly.
+-> Instance methods can access static variables and static methods directly.
+
+StringBuffer class 
+-> StringBuffer is synchronized. This means that multiple threads cannot call the methods of StringBuffer simultaneously.
+-> Due to synchronization, StringBuffer is called a thread safe class.
+-> Due to synchronization, StringBuffer is lot slower than StringBuilder
+
+StringBuilder Class
+-> StringBuilder is asynchronized. This means that multiple threads can call the methods of StringBuilder simultaneously.
+-> Due to its asynchronous nature, StringBuilder is not a thread safe class.
+-> Since there is no preliminary check for multiple threads, StringBuilder is a lot faster than StringBuffer.
+
+Autoboxing and Unboxing 
+-> Autoboxing refers to the conversion of a primitive value into an object of the corresponding wrapper class is called autoboxing. 
+-> Unboxing on the other hand refers to converting an object of a wrapper type to its corresponding primitive value.

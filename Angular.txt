@@ -1,0 +1,290 @@
+What is angular
+-> Angular is a binding framwork which help to implement MVVM pattern inside your web Application
+-> Angular also help to create single page Application with the help of routing
+-> It also has features like Dependency Injection, HTTP, Input Output
+
+What are Directives
+-> Directive help you to attach behaviour to HTTP DOM
+-> [(ngModel)]="value" {{value}}
+
+Structural Directive
+-> Change the DOM Layout by adding and removing the elements
+-> *ngFor 	
+
+Attribute Directive
+-> changes appearance and behaviour of the element
+-> [hidden]
+
+Component Directive
+-> Directives with templates. It's like user control
+-> These form the main class in directives.
+-> Instead of @Directive decorator we use @Component decorator to declare these directives.
+-> These directives have a view, a stylesheet and a selector property.
+
+Data Binding
+-> Data binding means how view and component communicates with each other
+
+Expression or Interpolation binding
+-> Data flows from component to the view and then we can mix that data into html view
+-> {}
+-> with the helps of {{data}}
+
+Propert Binding
+-> data flows from component to view and then attaches to some user input like textbox
+-> []
+-> [ngmodel]="data"
+
+Event Binding
+-> data flows from view to the component 
+-> it occurs when user click on some button or mouse movement 
+-> ()
+-> (click)="submit()"
+
+Two Way Data Binding
+-> two way binding is combination of event binding and property binding
+-> we use [()] for two way binding 
+-> so this way we can send data from component to view and if some event happens then from view to the controller 
+-> [()]
+-> [(ngmode)]="data"
+
+What are Annotation or MetaData
+-> same as decorators
+
+Decorators in Angular
+-> Decorators define what kind of angular class is it.
+-> Decorators can be added using @ Symbol
+-> if we are using @Component then it becomes Angular component and if we are using @NgModule then it becomes Angular Module
+ 
+Npm and node Modules
+-> Node package Manager helps the installation of javasvript file eg: npm install jquery
+-> when the package is installed it is stored in the node modules folder
+
+package.json
+-> It has all the javascript reference needed for the project
+-> so by installing one package at a time we can install all package in one go
+
+TypeScript
+-> TypeScript is a superset of javascript
+-> typescript adds types to the javascript
+-> It gives nice Object oriented programming enviorment which converts to javascript
+-> it is stromngly typed so we can have less errors beacause we can do OOPS with javvascript 
+-> our productivity increases
+
+Angular CLI
+-> Angular CLI is command line interface by which we can create intial angular project template.
+-> so rather than starting from scratch we can have som boiler plate code
+-> ng new myapp
+
+imp of Components and modules
+-> Components helps to bind the view and model. Component where you write the binding code .
+-> Module logically groups the component
+
+What are Template
+-> Template is an HTMl view of Angular in which we can write directives, pipes, forms, etc.
+-> There are 2 ways of defining template one is Inline template and other is separate HTML file
+
+Architecuture of Angular
+-> Template, Component, Modules, Bindings, Directives, Service, DI
+
+SPA
+-> Single page application are application where main UI get loaded once then the needed UI loaded on demand
+-> give eg: in webpafe there is banner header footer , navigation panel . if clicked on any link only that part will pe loaded other components will not load
+
+Routing
+-> Routing is a simple collection of Two Things URL and Component
+-> When this URL is called which component to load
+-> So routing helps you to define the navigation for your angular application.
+-> so if you want ot move from one screen to another screen and you want to respect SPA then routing is needed
+-> define url and component in routing module
+-> need routerlate where view will load
+-> define routerLink in viewmodel
+
+Lazy Loading
+-> Lazy loading means demand loading. Loading only the necessary html css and js/ts files for better performance
+-> divide project in different modules 
+-> add load children in routing collection
+
+Services
+-> Services helps you to create common logic across angular project
+
+Dependency Injection
+-> Dependency Injection is an application design pattern
+-> where rather than creating object instances from within the component, Angular injects it via constructor
+-> For implementing we need to add class in the providers which is in ngModule file
+-> helps to decouple class dependicies, so you can add new depedency and you don't have to change everywhere
+
+ngserve vs ngbuild
+-> ngserve builds in memmory while ng build in hard disk
+-> so when you want to go for production ng build is used 
+-> ng build store all the compiled files in the dist folder
+
+ng build --prod
+-> this compress your js files, removes all the comments
+-> create GUID's of your JS files and make your application ready for production
+
+RXJS
+-> Reactive extension for javascript
+-> is to handle asynchronos data streams
+
+Observable
+-> represent asynch data stream
+-> is an object which emmits the data
+
+observer
+-> is fuction which subscribe to the obeservable
+
+
+**********************************************************************************************
+
+1. Why were client-side frameworks like Angular introduced?
+Back in the day, web developers used VanillaJS and jQuery to develop dynamic websites but, as the logic of one's website grew, the code became more and more tedious to maintain. For applications that use complex logic, developers had to put in extra effort to maintain the separation of concerns for the app. Also, jQuery did not provide facilities for data handling across views.
+
+For tackling the above problems, client-side frameworks like Angular came into the picture, which made life easier for the developers by handling the separation of concerns and dividing code into smaller bits of information (In the case of Angular, called Components).
+
+Client-side frameworks allow one to develop advanced web applications like Single-Page-Application. Not that we cannot develop SPAs using VanillaJS, but by doing so, the development process becomes slower.
+
+
+2. How does an Angular application work?
+Every Angular app consists of a file named angular.json. This file will contain all the configurations of the app. While building the app, the builder looks at this file to find the entry point of the application. Following is an image of the angular.json file
+ Inside the build section, the main property of the options object defines the entry point of the application which in this case is main.ts.
+
+The main.ts file creates a browser environment for the application to run, and, along with this, it also calls a function called bootstrapModule, which bootstraps the application. These two steps are performed in the following order inside the main.ts file
+
+Each component is declared with three properties:
+
+Selector - used for accessing the component
+Template/TemplateURL - contains HTML of the component
+StylesURL - contains component-specific stylesheets
+After this, Angular calls the index.html file. This file consequently calls the root component that is app-root. The root component is defined in app.component.ts. This is how the index.html file looks
+
+3. What are some of the advantages of Angular over other frameworks?
+Features that are provided out of the box - Angular provides a number of built-in features like routing, state management, rxjs library and http servicesstraight out of the box. This means that one does not need to look for the above-stated features separately. They are all provided with angular.
+Declarative UI - Angular uses HTML to render the UI of an application. HTML is a declarative language and is much easier to use than JavaScript.
+Long-term Google support - Google announced Long-term support for Angular. This means that Google plans to stick with Angular and further scale up its ecosystem.
+
+7. What are Single Page Applications (SPA)?
+Single page applications are web based applications that only need to be loaded once, with new functionality consisting of only minor changes to the user interface. It does not load new HTML pages to display the content of the new page, but rather generates it dynamically. This is made feasible by JavaScript's ability to alter DOM components on the current page. A Single Page Application method is speedier, resulting in a more consistent user experience.
+
+8. What are templates in Angular?
+A template is a kind of HTML that instructs Angular about how to display a component. An Angular HTML template, like conventional HTML, produces a view, or user interface, in the browser, but with far more capabilities. Angular API evaluates an HTML template of a component, creates HTML, and renders it.
+
+There are two ways to create a template in an Angular component:
+
+Inline Template
+Linked Template
+Inline Template: The component decorator's template config is used to specify an inline HTML template for a component. The Template will be wrapped inside the single or double quotes.
+
+
+9. What are directives in Angular?
+A directive is a class in Angular that is declared with a @Directive decorator.
+
+Every directive has its own behaviour and can be imported into various components of an application.
+
+When to use a directive?
+
+Consider an application, where multiple components need to have similar functionalities. The norm thing to do is by adding this functionality individually to every component but, this task is tedious to perform. In such a situation, one can create a directive having the required functionality and then, import the directive to components which require this functionality.
+
+Types of directives:
+
+1. Component directives
+
+These form the main class in directives. Instead of @Directive decorator we use @Component decorator to declare these directives. These directives have a view, a stylesheet and a selector property.
+
+2. Structural directives
+
+These directives are generally used to manipulate DOM elements.
+Every structural directive has a ‘ * ’ sign before them.
+We can apply these directives to any DOM element.
+
+<div *ngIf="isReady" class="display_name">
+          {{name}}
+      </div>
+
+3. Attribute Directives
+
+These directives are used to change the look and behaviour of a DOM element. Let’s understand attribute directives by creating one
+
+
+import {Directive, ElementRef} from '@angular/core';
+
+@Directive({
+  standalone: true,
+  selector: '[appHighlight]',
+})
+export class HighlightDirective {
+  constructor(private el: ElementRef) {
+    this.el.nativeElement.style.backgroundColor = 'yellow';  /// imp
+  }
+}
+
+
+
+Components
+In Angular, components are the basic building blocks, which control a part of the UI for any application.
+
+A component is defined using the @Component decorator. Every component consists of three parts, the template which loads the view for the component, a stylesheet which defines the look and feel for the component, and a class that contains the business logic for the component.
+
+
+Modules
+A module is a place where we can group components, directives, services, and pipes. Module decides whether the components, directives, etc can be used by other modules, by exporting or hiding these elements. Every module is defined with a @NgModule decorator.
+
+By default, modules are of two types:
+
+Root Module
+Feature Module
+Every application can have only one root module whereas, it can have one or more feature modules.
+
+A root module imports BrowserModule, whereas a feature module imports CommonModule.
+
+
+Services
+Services are objects which get instantiated only once during the lifetime of an application. The main objective of a service is to share data, functions with different components of an Angular application.
+
+A service is defined using a @Injectable decorator. A function defined inside a service can be invoked from any component or directive.
+
+
+
+
+11. What is the scope?
+In Angular, a scope is an object that refers to the application model. It is a context in which expressions can be executed. These scopes are grouped hierarchically, comparable to the DOM structure of the application. A scope aids in the propagation of various events and the monitoring of expressions
+
+
+12. What is data binding in Angular?
+Data binding is one of the most significant and effective elements for creating communication between the DOM and the component. It makes designing interactive apps easier by reducing the need to worry about data pushing and pulling between the component and the template.
+
+There are Four types of Data binding in Angular: 
+
+Property Binding
+Event Binding
+String Interpolation
+Two way data binding
+
+Property Binding: One method of data binding is called property binding. In property binding, we connect a DOM element's property to a field that is a declared property in our TypeScript component code. In reality, Angular transforms string interpolation into property binding internally.
+
+Event Binding: Using event binding, you may respond to DOM events like button clicks and mouse movements. When a DOM event (such as a click, change, or keyup) occurs, the component's designated method is called.
+
+String Interpolation: In order to export data from TypeScript code to an HTML template( view ), String Interpolation is a one way data binding approach. The data from the component is shown to the view using the template expression enclosed in double curly braces. The value of a component property is added by using string interpolation.
+
+two way data binding: 
+Data sharing between a component class and its template is referred to as two-way data binding. If you alter data in one area, it will immediately reflate at the other end. This happens instantly and automatically, ensuring that the HTML template and TypeScript code are always up to date. Property binding and event binding are coupled in two-way data binding.
+
+
+14. What are Decorators and their types in Angular?
+Decorators are a fundamental concept in TypeScript, and because Angular heavily relies on TypeScript, decorators have become an important element of Angular as well.
+
+Decorators are methods or design patterns that are labeled with a prefixed @ symbol and preceded by a class, method, or property. They enable the modification of a service, directive, or filter before it is utilized. A decorator, in essence, provides configuration metadata that specifies how a component, class, or method should be processed, constructed, and used at runtime. Angular includes a number of decorators which attach various types of metadata to classes, allowing the system to understand what all these classes signify and how they should function.
+
+Types of decorators:
+
+Method Decorator: Method decorators, as the name implies, are used to add functionality to the methods defined within our class.
+@HostListener, is a good example of method decorators.
+
+Class Decorator: Class Decorators are the highest-level decorators that determine the purpose of the classes. They indicate to Angular that a specific class is a component or module. And the decorator enables us to declare this effect without having to write any code within the class.
+
+Parameter Decorator: The arguments of your class constructors are decorated using parameter decorators.
+
+Property Decorator: These are the second most popular types of decorators. They enable us to enhance some of the properties in our classes.
+ @Input(), @Output, @ReadOnly(), @Override() 
+
+
+

@@ -1,0 +1,143 @@
+What is Spring Boot
+-> Spring boot is a spring module
+-> Spring boot is a Framework for RAD(Rapid Application Development) build using Spring Framework with extra support of Auto Configuration and embeded application server like Tomcat, jetty
+-> It helps us in creating efficient fast stand alone application which we can just run it by removing lot of configuration and depedencies
+
+RAD
+-> RAD is modified Waterfall model which focuses on developing software in short span time
+-> Phases of RAD "Business modeling- Data modeling - process modeling -Application generation - testing and turn over"
+
+Annotation:
+
+@SpringBootApplication
+-> @SpringBootApplication annotation can be used to enable those three features @EnableAutoConfiguration,  @ComponentScan, @Configuration.
+
+@EnableAutoConfiguration
+-> enable Spring Boot’s auto-configuration mechanism
+
+@ComponentScan
+-> enable @Component scan on the package where the application is located
+
+@Configuration
+-> allow to register extra beans in the context or import additional configuration classes
+
+@RestController
+-> @RestController is use for Restful controllers
+-> It is a specialization of @Component and is autodetected through classpath scanning
+-> It Combination of @Controller and @ResponseBody annotations. It converts the response to JSON or XML.
+-> It allows us to handle the request made by the client
+-> It allows us to handle the REST API's such as GET, POST, DELETE, PUT request.
+
+@Component
+-> is a class level annotation
+-> used to mark java class as bean
+-> is an annotation that allows Spring to detect our custom beans automatically.
+
+@ResponseBody
+-> annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object.
+
+@RequestBody
+-> annotation maps the HttpRequest body to a transfer or domain object, enabling automatic deserialization
+
+@Controller
+-> it marks class as a web request handler .it is often used to serve web pages 
+
+@Autowired
+-> It the way to implement DI in spring
+-> Container will provided the rquired bean to depedent bean at runtime
+-> spring contanier autowires the bean by matching data type 
+
+@Service
+-> it is specilization of @Component
+-> te tell the spring that class contains business logic
+
+@Repository
+-> The repository is a DAO Data Access Object that access database directly 
+-> it does opration related to database
+
+@ApplicationContext
+->
+
+@Bean
+->
+
+What is Actuators
+-> Actuators is additional features which helps to monitor and manage your application when you push it to the production
+-> these features includes Auditing , health and metrics gathering 	
+-> we can enable this features by adding Spring-boot-starter-actuator in pom.xml
+- using spring actuators we can access the flow like what bean is created , what is cpu usage, http hits to the server has handled
+
+YAML file
+-> More clarity and better readability
+-> perfect for heirachical configuration data
+-> Support for maps, list and scalar types
+
+Lombok
+-> Used to remove the boiler plate code
+-> @Data is used for getter and setter
+
+Hibernate 
+-> eliminates boiler code comes with JDBC
+-> Support HQL with more object oriented
+-> Provides Trasaction management implicitily
+-> Support caching for better performance
+-> Interfaces 
+	-> Session : Used for connecting application with persitant store like hiberanate DB. used to get physical connection to database. Provide method for CRUD Operation
+	-> SessionFactory : Instance of this used to retrive the session objects for database operation
+	-> Transaction : this specifies single / Automic units of work
+
+@Entity
+-> used with model classes to specify that they are enitity beans
+
+@Table
+-> Used with entity bean to define the corresponding name in the database.
+
+@Id
+-> used to define the primary key in entity
+
+@Column
+-> used to define the column name in the daabase table.
+
+@Access
+-> used to define the access type, either field or peoperty 
+
+@GeneratedValue
+-> used to define the strategy to be used for generation of primary key eg. GenerationType.IDENTITY
+
+@OneToOne
+-> Used to define the one-to-one mapping between 2 entity bean
+
+@Cascade
+-> Used to define the casacading two entity beans used with mapping.
+-> means deleting data
+
+
+
+IOC
+->IoC Container is a framework for implementing automatic dependency injection. It manages object creation and its life-time and also injects dependencies into the class.
+
+-> Inversion of control
+-> represents the inversion of resposibility of object creation initilization adn destruction from application to spring container
+-> It allows creation of objects that will manage by spring container and its dependency too will resolved automatically
+
+Spring Container
+-> It take cares of object creation, Intilization and managing object dependencies
+
+AOP
+-> Aspects oriented programming
+-> Promotes separation of concepts such as logging , transaction security from core business logic
+
+Dpendency Injection
+-> The process of injecting dependent bean objects into target bean objects is called dependency injection.
+-> Setter Injection: The IOC container will inject the dependent bean object into the target bean object by calling the setter method.
+-> Constructor Injection: The IOC container will inject the dependent bean object into the target bean object by calling the target bean constructor.
+-> Field Injection: The IOC container will inject the dependent bean object into the target bean object by Reflection API.
+
+Spring Framework
+-> Spring is a pack of libraries and jar which gives a basic requirements upon with we can do customization so that we can create a project which is deployable
+-> Modules:
+->Data Access Integration : Provides support to interact with DB and to integrate with ORM solution like hiberanate JPA
+->Web: This Modile provide basic support for web application development it has web application context which is built on application context of core container . Hence it provide complete MVC impl to develop presentation tier and suppoerts integration with other framworks like JSF struts etx
+-> Core Container : This module provide IOC and dependency injection features to spring framework. It also contian bean factory , application context and Spel
+-> Others: Other modules are also provided like AOP Messaging Testing like JUnits etc
+
