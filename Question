@@ -1,0 +1,29 @@
+Questions Given By Shraddha - Part 1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Core Java
+Java 8 (Practical questions regarding lists & basic operations, lambda functions, filter etc)
+List related questions like: Ask to write two lists and merge those two lists and print unique values using Java 8 or change cases of elements of lists from small to capital using Java 8, Square of elements of lists and print distinct numbers)
+What's split, limit, etc
+String( memory management), Initialization of String 
+Spring boot
+Database queries
+JUnit
+BDD
+Hibernate
+Sonar
+Microservices
+Docker
+REST API
+Web Client
+Enum, Singleton class, Threading in Singleton class
+Multithreading
+Design Patterns
+Comparator, Comparable
+Types of logger, log levels
+Mono
+Annotations like @pathVariable, @pathParam, @Component, etc
+Synchronization, Serialization
+Builder class
+Practical question on how to write API(Controller, service)
+JVM Loading
+Kafka, zookeeper
