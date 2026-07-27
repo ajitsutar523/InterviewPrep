@@ -1,0 +1,27 @@
+coding questions: 
+.count(), foreach(), .skip(0), .sorted(), .distinct(), findFirst(), limit(), .sorted(Comparator.reverseOrder()), collect(collectors.toList()),collect(collectors.groupingBy(s->s, collectors.counting())), mapToObj(),max(Comparator.comparing(String::length))
+Collection.frequency()
+even number: list.stream().filter(n->n%2==0).foreach(system.out::println);
+sum of all number : int sum=list.stream().mapToInt(Integer:intvalue).sum();
+maximum number : int max= list.steam().max(Integer:compare).get();
+count : long count = list.stream().count();
+second highest salary : employee.stream().map(employee::getSalary).distinct().sorted(comparator.reverseorder()).skip(1).findFirst().orelse(0.0)
+
+kafka -> event streaming platform used to publish sore and process lagrge volums of data
+Producer - > kafka topic -> partionerer -> broker -> consumer group -> consumer -? 
+
+design pattern - > creational -> singleton factory builder
+		   structural -> adapter - proxy 
+		   behavioular -> strategy , observer
+
+ACID - > Atomicity, consistency, isolation, durability
+
+Functional interface : Predicate test() , consumer acceot( ) , supplier get() , function apply(T t)
+
+instatiation -> DI (autowired) -> aware interface -> pre inti (post process before initi)-> initi callbacks (post contruct) -> post initi (post process after initi) -> reasy for use -> destruction callback (pre destroy)
+
+saga design pattern
+
+cap theorem
+
+availability and coonsisitency with distributed systems with saga concecehtera 
