@@ -27,3 +27,604 @@ Builder class
 Practical question on how to write API(Controller, service)
 JVM Loading
 Kafka, zookeeper
+
+QUESTIONS GIVEN BY SOMNATH: PART1
+
+1  How will you simulate concurrent modification through stream API ?
+
+2  How many thread will open for parallel stream and how parallel stream internally works ?
+
+3  How does Executor make or check , number of threads are active or dead , in other word what is internal working of thread pool executor ?
+
+4  Kindly give brief idea about JAVA memory model.
+
+5  What are the changes of pegmen in JDK 8. (PermGen and Meta)?
+
+6  What is the difference between normal REST service and Restful WS (Web Service)?
+
+7  What are the different types of Http methods and their differences ?
+
+8  What is DDOS(denial of service ) attack and how will we prevent from this in our Applications ?
+
+9  What is Method Reference and Functional Interface ?
+
+10  Please define Overridden rules for default/static method in java 8.
+
+11  s Related to JAVA Design Patterns mainly
+
+Creational Design Patters
+
+i) Singleton
+
+ii) Builder
+
+iii)Factory
+
+iv) Prototype
+
+Structural Design Patterns
+
+i) Adaptor
+
+ii) Bridge
+
+iii)Proxy
+
+iv) Decorator
+
+Behavioral Design Patterns
+
+i) Chain of Responsibility
+
+ii) Observer
+
+iii) Strategy
+
+12  How will you secure your API’s ?
+
+13  Please give brief description about hashcode() and equals() ? follow up  will be if 1 is overridden and another not vice versa in the reference of customized object while using map?
+
+14  Internal Working of HashMap and HashSet
+
+15  How will you enable cache in spring boot microservices project , or what all annotation you can use to implement the same ?
+
+16  Please describe , how Kafka works and what is consumer groups while using Kafka ?
+
+17  Please tell us about what all design patterns you have used to design your microservices application ? Mainly
+
+i) Circuit Breaker
+
+ii) SAGA
+
+iii) CQRS
+
+iv) Two phase commit
+
+18  what is database sharding ?
+
+19  Difference between (RDMS) SQL and No SQL ?
+
+20  What is apache spark ? use of apache spark with spring boot application ?
+
+21  What is traceId and span Id in spring boot microservice application and what is use of these id’s ?
+
+22  what is webflux and mono in spring boot ?
+
+23  How will you create custom immutable class ? follow up  can be as String is immutable class can you prove that with some code snippet ?
+
+24  What are the time/space complexities for collection classes and name their internal underline data structure?
+
+25  What all concurrent collection class have you used in your application and what improvement has been done in collection classes from Java 8 onwards ?
+
+26  What all improvement for IO in java 8 ?
+
+27  How will enable and disable auto configuration in spring boot ?
+
+28  What is use of actuator and how will you customized the same ?
+
+29  How will you create custom annotation ?
+
+30  What & why do we use Kubernetes and tell me about its cluster , Node , POD etc. ?
+
+31  What will you use for Application Resilience ?
+
+32  If any data base table has name , id column then please write a query to find even rows ?
+
+33  Name of algorithm use by Arrays.sort(..) and Collections.sort(..)
+
+34  Why do we use serialVersionUID ?
+
+35  How can you prevent cyclic dependency in spring ?
+
+36  Is this possiable to decrease the size of a docker image ?
+
+37  How can we break singleton class ? what is single object creation strategy ?
+
+38  What is deep and shallow cloning and give the use of Cloanable interface ?
+
+39  Why do we use builder design pattern rather not to choose use constructor base object creation ?
+
+40  How will you make two ambiguity URL working in spring boot without changing the http method type and no change will be accepted in URL as well ?
+
+41  What is your application deployment structure ?
+
+42  Describe the use of CompletableFuture ?
+
+43  Use of String.join(….) in java 8?
+ 
+QUESTIONS GIVEN BY SOMNATH: PART2
+
+Write a program to find the duplicate characters in list of string . Only java stream will be accepted ?
+
+Find the duplicate element and its occurrence in a given string ? Only java stream will be accepted ?
+
+You have an arrays of zeros (0) and (1) keep all zeros at the left hand side and all 1 to right hand side ?
+
+e.g Integer array[] =[1,1,0,1,0] -> output : [0,0,1,1,1]
+
+Find the continuous sequences of numbers in given input . Provide all possiable test?
+
+e.g input 1 2 3 5 9 a 6 7 8 4 @ -5 -7 -3 -2 -1
+
+output
+
+1 2 3
+
+6 7 8
+
+-3 -2 -1
+
+Find Nth salary in given map . Only Java 8 stream solution will be accepted
+
+e.g
+
+Student has name and salary
+
+Map will be like Map<String , Student >
+
+
+Given a list of N students, every student is marked for M subjects. Each student is denoted by an index value. Their teacher Ms. Margaret must ignore the marks of any 1 subject for every student. For this she decides to ignore the subject which has the lowest class average.
+
+Your task is to help her find that subject, calculate the total marks of each student in all the other subjects and then finally return the array of the total marks scored by each student.
+
+Input Specification:
+
+input1:
+
+An integer value N denoting number of students
+
+input2:
+
+An integer value M denoting number of subjects
+
+input3:
+
+A 2-D integer array of size N’M containing the marks of all students in each subject.
+
+Output Specification:
+
+Return an integer array of size N containing the total marks of each student afte deducting the score for that one subject.
+
+Input :
+
+3 5
+
+75 76 65 87 87
+
+78 76 68 56 89
+
+67 87 78 77 65
+
+Output:
+
+325 299 296
+
+
+Write a program to find unique elements in given string by JAVA streams.
+
+Write a program to find first non repeat element from a given string by Java Streams.
+
+Write a program to find second highest element from an array , Array can contain duplicate elements . Solve it by stream java 8.
+
+Write a program to find first repeat element/character from a given string by Java Streams.
+
+Write a program to find longest string in a given array.
+
+Write a Java program to find all elements from array which starts from 2 using stream API.
+
+Given an expression string exp, write a program to examine whether the pairs and the orders of “{“, “}”, “(“, “)”, “[“, “]” are correct in the given expression.
+
+Example:
+
+Input: exp = “[()]{}{[()()]()}”
+
+Output: Balanced
+
+Explanation: all the brackets are well-formed
+
+Input: exp = “[(])”
+
+Output: Not Balanced
+
+Explanation: 1 and 4 brackets are not balanced because
+
+there is a closing ‘]’ before the closing ‘(‘
+ 
+Q: Your experience narration?
+ 
+Q: Microservices architecture used in the project? latest project?
+ 
+Q: How you communicate with multiple data sources ?
+ 
+Q : Can you work with other microservice s2 from microservice s1.. when you have databases for each ms?
+ 
+Q: Can you work with datasource for mongo db? Can it be in same project?
+ 
+Q: Have you worked on compensation design patterns?  Q: Explain all design patterns.
+Q: Internal working of concurrenthashmap?
+ 
+Q: Where are static variables stored?
+ 
+Q: Explain java memory mgmt.
+ 
+Q: which jdk you have used?
+ 
+Q: Have you worked on stored procs? Can you modify ? ( like bulk collect/insert)
+ 
+Q: Have you worked on BDD?                                                                                                                                      Q: Which jdk you would select for proj? Why would u choose jdk17? What changes u make? Will it be backward compatible? Q:  how does oauth2 or security works from client for your current project?  Q: Give example of handling failure in your microservices? How you solved it? Why you preferred events? Q:Explain difference between path parameter and query parameter? Q: Can you explain me how would you handle exceptions in the project?
+ 
+Q: Have you worked on JUNIT?
+Q:  Which jdk you would select for proj? Why would u choose jdk17? What changes u make? Will it be backward compatible? 
+Q:  how does oauth2 or security works from client for your current project?  
+Q: Give example of handling failure in your microservices? How you solved it? Why you preferred events? 
+Q:Explain difference between path parameter and query parameter? 
+Q: Can you explain me how would you handle exceptions in the project?
+
+Handson:
+ 
+1) sort strings with length, print string in lowest order
+ 
+2) Tell true false
+ 
+String s1="test";
+ 
+        String s2="test";
+ 
+        String s3=new String("test");
+ 
+        StringBuffer s4=new StringBuffer("test");
+ 
+3) HashMap test
+ 
+HashMap h=new HashMap();
+ 
+        h.put(1,"test");
+ 
+        h.put(1,"Retest");
+ 
+        h.put(2,"AgainTest");
+        System.out.println(h);
+
+Q:Name 3/4 interfaces in java 8??
+ 
+Q What is predicate?
+ 
+Q What is consumer?
+ 
+Q can I pass2 values to consumers? What is Bifunction?
+ 
+Q  Other features used in java 8?
+A Functional program dateapi lambda
+ 
+Q How do we handle multithreading racing condition?
+ 
+Q How do you handle deadlock scenario?
+ 
+Q which system design patterns used?
+ 
+Q What is singleton?
+ 
+Q How does factory design pattern works?
+ 
+Q WHat is façade?
+ 
+single respoisibioity principle
+ 
+Q What is SOLID principle?
+ 
+openclosed/LISKO substitute principle
+ 
+ 
+Q what is dependency inversion?
+ 
+Q What is event architecture?
+ 
+Q Give event architecture? RabbitMQ kafka topics
+ 
+Q spring boot dependency inject?
+ 
+Q what different approaches to inject beans in other class...
+ 
+Q  what are other sprb annotations
+ 
+Q what is difference between combined type of anno , spring vs spring boot
+ 
+Q what is sprb b  starter?
+ 
+Q what is caching in sprb?
+ 
+Q what to cache and when to refesh?
+ 
+Q what is hash function?
+ 
+Q WHat is default equals method in object
+ 
+DB:
+1) What is ACID property
+2) what are joins
+3) What is right join?
+4) WHy indices? Too many indices what problem they can cause?
+How does it impact update operation?
+5) Which is better truncate and drop?
+ 
+6) Diff table and view
+7) clustered index and nonclustered index  - db tough question?
+8) database constraints what u can apply
+9) trigger?
+ 
+Java Exceptions? Check uncheck
+Q Name some runtime exceptions
+ 
+Q can we have try without catch?
+ 
+ 
+HANDSON:
+Q Take arraylist numbers --> output list with distinct numbers
+ 
+Q Take arraylist and output  Map with number and countofoccurence
+ 
+Q write a consumer in Java 8 to print arryalist with Map
+ 
+Q Write a function in java 8 to take input of arraylist and output list with distinct number
+of Map with number and occurrence
+
+//override
+//string, buffer, builder, memory, why immutable, == , equals
+//Parent of all classes, methods in object class
+//Exception, try, catch, finally, throw, throws
+//final, finally, finalize
+//static
+//what is abstraction
+//what is inheritance
+//can sonstructor be private
+//Lambda
+//ArrayList, LinkedList, HashMap
+//IoC, Annotaions, Controller, Restcontroller, @Test, Mockito, @table, @id, column, entity, generatedvalue
+//spring architecture
+//get, post, put
+//why to use Integer insted of int, box, unbox
+//Sql -> WP to find out 3rd largest salary
+
+**1. Simulating Concurrent Modification Through Stream API**
+Concurrent modification can be simulated using parallel streams and a non-thread-safe collection like `ArrayList`. Modifying the collection while iterating over it with streams will result in `ConcurrentModificationException`.
+```java
+List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+list.parallelStream().forEach(i -> {
+    list.add(i * 2);  // This will cause ConcurrentModificationException
+});
+```
+
+**2. Number of Threads in Parallel Stream**
+Parallel streams use the ForkJoinPool with a default number of threads equal to `Runtime.getRuntime().availableProcessors()`. This can be customized with `System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "4");`.
+
+**3. Internal Working of ThreadPoolExecutor**
+ThreadPoolExecutor manages a pool of worker threads. It maintains a queue for tasks and reuses existing threads. It uses `getActiveCount()` and `getPoolSize()` to track active and idle threads.
+
+**4. Java Memory Model (JMM)**
+JMM defines how threads interact through memory. Key components include:
+- **Heap:** Stores objects.
+- **Stack:** Stores method-specific data.
+- **Method Area:** Stores class metadata.
+- **Working Memory:** Each thread has a copy of variables.
+
+**5. Changes in PermGen in JDK 8**
+PermGen was replaced with Metaspace, which dynamically resizes and uses native memory, improving garbage collection performance.
+
+**6. REST vs RESTful Web Services**
+REST is an architectural style; RESTful WS follows REST principles, including statelessness, resource-based URLs, and HTTP methods.
+
+**7. HTTP Methods Differences**
+- `GET`: Retrieve data
+- `POST`: Create resource
+- `PUT`: Update resource
+- `DELETE`: Remove resource
+
+**8. DDoS Attack Prevention**
+- Rate limiting
+- CAPTCHA verification
+- Web Application Firewalls (WAFs)
+- Distributed CDN
+
+**9. Method Reference & Functional Interface**
+Method reference simplifies lambda expressions (`List::size`). Functional interfaces have a single abstract method (`Runnable`, `Function<T, R>`).
+
+**10. Overriding Rules for Default/Static Methods**
+- Default methods can be overridden in implementing classes.
+- Static methods belong to the interface and cannot be overridden.
+
+**11. Java Design Patterns**
+- **Creational:** Singleton, Builder, Factory, Prototype.
+- **Structural:** Adapter, Bridge, Proxy, Decorator.
+- **Behavioral:** Chain of Responsibility, Observer, Strategy.
+
+**12. API Security**
+- JWT authentication
+- OAuth2
+- API Gateway
+- Rate limiting
+
+**13. hashCode() and equals()**
+- `hashCode()` returns a hash; `equals()` checks equality.
+- If only `equals()` is overridden, `HashMap` may fail to locate entries.
+
+**14. Internal Working of HashMap and HashSet**
+- **HashMap:** Uses array + linked list/binary tree for collisions.
+- **HashSet:** Uses HashMap internally.
+
+**15. Enabling Cache in Spring Boot**
+Use `@EnableCaching` and `@Cacheable` annotations.
+
+**16. Kafka Consumer Groups**
+A consumer group ensures load balancing by distributing messages among multiple consumers.
+
+**17. Microservices Design Patterns**
+- Circuit Breaker (Resilience4j)
+- SAGA (Transactional workflow)
+- CQRS (Separate read/write models)
+- Two-Phase Commit (Distributed transactions)
+
+**18. Database Sharding**
+Partitioning data across multiple databases to improve performance.
+
+**19. SQL vs NoSQL**
+- SQL: Structured, relational, ACID-compliant.
+- NoSQL: Schema-less, horizontal scaling.
+
+**20. Apache Spark in Spring Boot**
+Used for big data processing, integrated via Spring Boot connectors.
+
+**21. TraceId and SpanId in Microservices**
+Used for distributed tracing (Zipkin, Sleuth) to track request flow.
+
+**22. WebFlux and Mono**
+WebFlux enables reactive programming. `Mono` represents 0 or 1 async values.
+
+**23. Creating Custom Immutable Class**
+```java
+final class ImmutableClass {
+    private final int value;
+    public ImmutableClass(int value) { this.value = value; }
+    public int getValue() { return value; }
+}
+```
+
+**24. Collection Time/Space Complexity**
+- `ArrayList`: O(1) get, O(n) remove
+- `LinkedList`: O(n) get, O(1) add/remove
+
+**25. Java 8 Concurrent Collection Improvements**
+- `ConcurrentHashMap` enhancements
+- `CompletableFuture`
+
+**26. Java 8 IO Improvements**
+- `Files.lines(Path)` for stream-based reading
+- `BufferedReader.lines()`
+
+**27. Enabling/Disabling Auto-Configuration in Spring Boot**
+Use `@EnableAutoConfiguration(exclude = {ClassName.class})`.
+
+**28. Spring Boot Actuator**
+Provides health checks and monitoring.
+
+**29. Creating Custom Annotations**
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface CustomAnnotation {}
+```
+
+**30. Kubernetes Overview**
+Manages containerized applications with Pods, Nodes, Clusters.
+
+**31. Application Resilience**
+- Circuit Breaker
+- Bulkhead pattern
+
+**32. Query to Find Even Rows**
+```sql
+SELECT * FROM table WHERE MOD(id, 2) = 0;
+```
+
+**33. Sorting Algorithm in Java**
+- `Arrays.sort()`: Dual-Pivot QuickSort
+- `Collections.sort()`: MergeSort/Timsort
+
+**34. Use of serialVersionUID**
+Ensures object deserialization compatibility.
+
+**35. Preventing Cyclic Dependency in Spring**
+Use `@Lazy` and constructor injection.
+
+**36. Reducing Docker Image Size**
+- Use multi-stage builds
+- Minimize base image layers
+
+**37. Breaking Singleton Class**
+- Reflection can break singleton
+- Use enum to prevent breaking
+
+**38. Deep vs Shallow Cloning**
+- Shallow: Copies object reference.
+- Deep: Creates a new object copy.
+
+**39. Builder Pattern vs Constructor**
+Builder pattern avoids constructor explosion and improves readability.
+
+**40. Handling Ambiguous URLs in Spring Boot**
+Use `produces` or `consumes` attributes in `@RequestMapping`.
+
+**41. Application Deployment Structure**
+- Spring Boot apps in Kubernetes or VMs.
+- Uses CI/CD pipeline.
+
+**42. Use of CompletableFuture**
+Enables asynchronous, non-blocking programming.
+
+**43. String.join() in Java 8**
+Concatenates elements with a delimiter: `String.join(",", "A", "B")` -> `"A,B"`.
+
+OOPS
+JAVA Architecture
+Memory management
+Collections
+MultiThreading
+Exception
+
+
+JAVA 8 
+
+SQL ACID
+
+SPRING Boot
+Framework
+Architecture
+Annotations
+DI
+Rest Controller Api 
+IOC
+
+
+
+Design patterns
+SOLID
+KAFKA
+Docker
+OAuth 2
+Sonar
+Testing BDD Junit
+Micro Services
+
+
+JDK - Java Source File, Compilation, Execution
+JRE - Class Loader, Bytecode Verifier, Interpreter, Execution
+JVM - Loading, Linking, Initialization
+
+JIT - it will start execution while reading the bytecode while jvm interpret the bytecode and then start execution
+
+Memory storage - Class(Method) Area: stores class-level data of every class such as the runtime constant pool, field, and method data, and the code for 		methods.
+		Heap: Objects are created or objects are stored. It is used to allocate memory to objects during run time.
+		Stack: stores data and partial results which will be needed while returning value for method and performing dynamic linking
+		Program Counter Register: stores the address of the Java virtual machine instruction currently being executed.
+		Native Method Stack: stores all the native methods used in the application.
+String Pool - place in heap memory
+Wrapper class -  wrapper class is an object class that encapsulates the primitive data types
